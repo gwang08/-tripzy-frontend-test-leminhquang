@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tripzy - Travel Booking Platform
 
-## Getting Started
+A modern travel booking platform built with Next.js 15, React 19, and TypeScript for seamless bus, hotel, and flight bookings.
 
-First, run the development server:
+## 🚀 Live Demo
+
+**Vercel**: [xxx](xxx)
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm / yarn / pnpm
+
+### Installation & Development
 
 ```bash
+# Install dependencies
+npm install
+# or
+yarn install
+# or
+pnpm install
+
+# Run development server
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
+
+# Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build for Production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Build
+npm run build
+# or
+yarn build
+# or
+pnpm build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Start production server
+npm start
+# or
+yarn start
+# or
+pnpm start
+```
 
-## Learn More
+## 🏗️ Architecture & Technical Stack
 
-To learn more about Next.js, take a look at the following resources:
+### Core Technologies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js 15** (App Router): Modern React framework with server components and streaming SSR
+- **React 19**: Latest React with enhanced concurrent features
+- **TypeScript 5**: Full type safety across the application
+- **Tailwind CSS 4**: Utility-first CSS for rapid development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Project Structure
 
-## Deploy on Vercel
+```
+tripzy/
+├── app/                    # Next.js pages (page.tsx, layout.tsx)
+├── components/             # Reusable UI components
+│   ├── Homepage.tsx        # Main landing page
+│   ├── SearchContent.tsx   # Search results display
+│   ├── LocationInput.tsx   # Autocomplete location selector
+│   ├── DatePicker.tsx      # Dual-month calendar
+│   └── *Skeleton.tsx       # Loading states
+├── types/                  # TypeScript interfaces
+│   ├── location.ts
+│   ├── form.ts
+│   └── components.ts
+├── lib/
+│   ├── constants/          # Design tokens (colors, typography, layout)
+│   └── utils/              # Helper functions (date, validation, URL)
+├── hooks/                  # Custom React hooks
+│   └── useClickOutside.ts
+└── data/                   # Static JSON data
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Key Architectural Decisions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Modular Architecture**
+- Clean separation: components, types, utilities, and hooks in dedicated directories
+- Barrel exports (`index.ts`) for simplified imports
+- Each component paired with loading skeleton for optimal UX
+
+**Type-Safe Development**
+- Centralized TypeScript definitions in `/types`
+- Strict type checking enabled
+- IntelliSense support throughout
+
+**Design System**
+- Design tokens (colors, typography, layout) in `/lib/constants`
+- Custom font: Nunito Sans (weights: 400, 600)
+- Consistent styling across components
+
+**Reusable Utilities**
+- Date formatting and validation in `/lib/utils/date.ts`
+- Form validation logic in `/lib/utils/validation.ts`
+- URL parameter building in `/lib/utils/url.ts`
+- Custom `useClickOutside` hook for dropdowns
+
+**Performance & UX**
+- Suspense boundaries with skeleton UI matching actual layouts
+- Client-side rendering for interactive forms
+- Optimized bundle size with tree-shaking
+- Monday-first calendar with weekend highlighting
+
+### Why These Choices?
+
+- **Next.js 15 App Router**: Better code organization, streaming SSR, and React Server Components support
+- **TypeScript**: Catches errors at compile-time, improves maintainability
+- **Tailwind CSS**: Rapid development, no CSS bloat with purge
+- **Modular Structure**: Scalable, testable, and easy to maintain as the project grows
