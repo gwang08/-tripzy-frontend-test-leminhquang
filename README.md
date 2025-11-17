@@ -4,7 +4,7 @@ A modern travel booking platform built with Next.js 15, React 19, and TypeScript
 
 ## 🚀 Live Demo
 
-**Vercel**: [xxx](xxx)
+**Vercel**: [https://tripzy-frontend-test-leminhquang.vercel.app/](Click here)
 
 ## 📦 Getting Started
 
