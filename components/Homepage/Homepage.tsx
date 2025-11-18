@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import LocationInput from "./LocationInput";
-import DatePicker from "./DatePicker";
-import PassengerSelector from "./PassengerSelector";
+import LocationInput from "../LocationInput";
+import DatePicker from "../DatePicker";
+import PassengerSelector from "../PassengerSelector";
 import locationsData from "@/data/locations.json";
 import type { TabType, FormData, FormErrors } from "@/types";
 import { validateSearchForm, isFormValid } from "@/lib/utils";
