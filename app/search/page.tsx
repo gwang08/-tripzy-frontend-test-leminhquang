@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import SearchContent from "@/components/SearchContent";
-import SearchSkeleton from "@/components/SearchSkeleton";
+import SearchContent from "@/components/Searchpage/SearchContent";
+import SearchSkeleton from "@/components/Searchpage/SearchSkeleton";
 
 /**
  * Search Page
